@@ -13,7 +13,7 @@ export default function Login() {
     const [error, setError] = useState('');
     const isInvalid = password === '' || emailAddress === '';
 
-    const handleLogin = async (event) => {
+    const handleSignUp = async (event) => {
         event.preventDefault();
         try {
             await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
@@ -43,7 +43,7 @@ export default function Login() {
                 </h1>
                 {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
 
-                <form onSubmit={handleLogin} method="POST">
+                <form onSubmit={handleSignUp} method="POST">
                     <input
                             aria-label="Enter your email address"
                             type="text"
