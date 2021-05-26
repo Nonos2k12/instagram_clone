@@ -21,7 +21,7 @@ const User = ({ username, fullName }) =>
         </Link>
     );
 
-    export default User;
+    export default memo(User);
 
 User.propTypes = {
     username: PropTypes.string,
