@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 import useUser from '../../hooks/use-user';
-import { isUserFollowingProfile } from '../../services/firebase';
+import { isUserFollowingProfile, toggleFollow } from '../../services/firebase';
 
 export default function Header({ 
     photosCount,
@@ -32,7 +32,7 @@ export default function Header({
 
     useEffect(() => {
         const isLoggedInUserFollowingProfile = async () => {
-            const isFollowing = await isLoggedInUserFollowingProfile(user.username, profileUserId);
+            const isFollowing = await isUserFollowingProfile(user.username, profileUserId);
             setIsFollowingProfile(isFollowing);
         };
 
