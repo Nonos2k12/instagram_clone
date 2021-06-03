@@ -44,5 +44,5 @@ Profile.propTypes = {
         fullName: PropTypes.string.isRequired,
         userId: PropTypes.string.isRequired,
         username: PropTypes.string.isRequired
-    }).isRequired
+    })
 };
