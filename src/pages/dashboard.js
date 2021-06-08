@@ -2,8 +2,11 @@ import { useEffect } from 'react';
 import Header from '../components/header';
 import Sidebar from '../components/sidebar';
 import Timeline from '../components/timeline';
+import useUser from '../hooks/use-user';
 
-export default function Dashboard() {
+export default function Dashboard({ user: loggedInUser }) {
+    const { user } = useUser(loggedInUser.uid);
+    
     useEffect(() => {
         document.title = 'Instagram';
     }, []);
